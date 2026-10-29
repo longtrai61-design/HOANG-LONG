@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Trợ Lý AI - Hoàng Long</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AI Hoàng Long">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Google Fonts & Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="brand-box">
+            <span class="crown-icon">👑</span>
+            <div>
+                <h1>Trợ Lý AI</h1>
+                <span class="brand-tag">Tool by Hoàng Long</span>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button id="btn-install" class="icon-btn" title="Cài đặt ra màn hình chính">📲</button>
+            <button id="btn-settings" class="icon-btn" title="Cài đặt API Key">⚙️</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="app-container">
+        <!-- Chế độ chọn -->
+        <div class="mode-selector">
+            <button class="mode-tab active" data-mode="reply">💬 Soạn Tin Nhắn</button>
+            <button class="mode-tab" data-mode="translate">🌐 Dịch Thuật Đa Ngữ</button>
+        </div>
+
+        <!-- Ô nhập liệu -->
+        <div class="input-section">
+            <label for="user-input" id="input-label">Nội dung đoạn chat hoặc ý chính cần trả lời:</label>
+            <textarea id="user-input" placeholder="Ví dụ: Khách hỏi áo này còn màu đen size L không shop? Sẵn sàng tư vấn nhiệt tình..."></textarea>
+            
+            <!-- Bộ chọn Tông giọng -->
+            <div class="tone-box" id="tone-container">
+                <span class="tone-label">Chọn tông giọng:</span>
+                <div class="tone-chips">
+                    <button class="chip active" data-tone="Lịch sự, chuyên nghiệp">Lịch sự</button>
+                    <button class="chip" data-tone="Thân thiện, nhiệt tình">Thân thiện</button>
+                    <button class="chip" data-tone="Chốt đơn nhanh, thuyết phục">Chốt đơn</button>
+                    <button class="chip" data-tone="Hài hước, Gen Z">Gen Z</button>
+                    <button class="chip" data-tone="Từ chối khéo léo">Từ chối khéo</button>
+                </div>
+            </div>
+
+            <button id="btn-generate" class="primary-btn">
+                <span>✨ Tạo Câu Trả Lời AI</span>
+            </button>
+        </div>
+
+        <!-- Khu vực kết quả -->
+        <div class="output-section" id="output-section" style="display: none;">
+            <div class="output-header">
+                <h3>Kết quả từ AI:</h3>
+                <span id="loading-status" style="display: none;">Đang suy nghĩ...</span>
+            </div>
+            <div class="output-card" id="output-card">
+                <!-- Nội dung kết quả render ở đây -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>⚡ Tool by Hoàng Long • AI Mobile Edition</p>
+    </footer>
+
+    <!-- Modal Cài đặt API Key -->
+    <div id="settings-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🔑 Cài Đặt Gemini API Key</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <p class="modal-desc">Nhập Gemini API Key của bạn để sử dụng AI. Khóa được lưu an toàn trên trình duyệt của bạn.</p>
+            <input type="password" id="api-key-input" placeholder="Dán API Key vào đây (AIzaSy...)">
+            <button id="save-api-key" class="primary-btn">Lưu Lại</button>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
